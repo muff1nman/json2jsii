@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`example with $ref 1`] = `
+"/**
+ * @schema RuleGroup
+ */
+export interface RuleGroup {
+  /**
+   * @schema RuleGroup#name
+   */
+  readonly name: string;
+
+  /**
+   * @schema RuleGroup#interval
+   */
+  readonly interval?: string;
+
+  /**
+   * @schema RuleGroup#rules
+   */
+  readonly rules: RuleNode[];
+
+}
+
+/**
+ * @schema RuleGroups
+ */
+export interface RuleGroups {
+  /**
+   * @schema RuleGroups#groups
+   */
+  readonly groups: RuleGroup[];
+
+}
+
+/**
+ * @schema RuleNode
+ */
+export interface RuleNode {
+  /**
+   * @schema RuleNode#record
+   */
+  readonly record?: string;
+
+  /**
+   * @schema RuleNode#alert
+   */
+  readonly alert?: string;
+
+  /**
+   * @schema RuleNode#expr
+   */
+  readonly expr: string;
+
+  /**
+   * @schema RuleNode#for
+   */
+  readonly for?: string;
+
+  /**
+   * @schema RuleNode#labels
+   */
+  readonly labels?: { [key: string]: string };
+
+  /**
+   * @schema RuleNode#annotations
+   */
+  readonly annotations?: { [key: string]: string };
+
+}
+"
+`;

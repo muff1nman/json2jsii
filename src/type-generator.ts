@@ -167,6 +167,11 @@ export class TypeGenerator {
       return `{ [key: string]: ${this.typeForProperty(typeName, def.additionalProperties)} }`;
     }
 
+    if (!def.properties && def.patternProperties && Object.keys(def.patternProperties).length === 1) {
+      const singlePattern = Object.entries(def.patternProperties)[0];
+      return `{ [key: string]: ${this.typeForProperty(typeName, singlePattern[1])} }`;
+    }
+
     // struct
     if (def.properties) {
       this.emitStruct(typeName, def, structFqn);
